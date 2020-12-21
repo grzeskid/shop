@@ -2,6 +2,9 @@
   position: fixed;
   width: 100%;
   box-shadow: #00000029 0 3px 6px;
+  
+  // glass-effect
+
 //   background: rgba( 255, 255, 255, 0.00 );
 // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 // backdrop-filter: blur( 3.5px );
@@ -34,13 +37,14 @@
   color: $colorGrey;
   font-family: "Open Sans";
   height: 100%;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 .header li a:hover{
   color: black;
   font-weight: bold;
   border-bottom: 3px solid $colorPrimary;
-  transition: border 1s;
+  text-shadow: 0 0 10px $colorPrimary;
+  transition: 0.2s;
 }
 
 .header .logo-container {
@@ -177,6 +181,10 @@
 
   .header .menu-icon {
     display: none;
+  }
+  .header-welcome{
+    display: flex;
+    justify-content: center;
   }
 }
 

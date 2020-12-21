@@ -409,14 +409,15 @@ a {
   color: #A5A5A5;
   font-family: "Open Sans";
   height: 100%;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 
 .header li a:hover {
   color: black;
   font-weight: bold;
   border-bottom: 3px solid #08A6E4;
-  transition: border 1s;
+  text-shadow: 0 0 10px #08A6E4;
+  transition: 0.2s;
 }
 
 .header .logo-container {
@@ -541,6 +542,11 @@ a {
 
   .header .menu-icon {
     display: none;
+  }
+
+  .header-welcome {
+    display: flex;
+    justify-content: center;
   }
 }
 @media (max-width: 944px) {
