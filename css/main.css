@@ -378,6 +378,12 @@ a {
   color: black;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header-welcome {
   position: fixed;
   width: 100%;
@@ -566,6 +572,9 @@ a {
     margin: 0;
     left: 0;
     padding-left: 7%;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
   }
 
   .header .logo-container .logo {
@@ -592,6 +601,86 @@ a {
 @media (max-width: 350px) {
   .header .menu {
     padding-left: 11%;
+  }
+}
+.baner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("/assets/Background.png") no-repeat bottom/90% auto;
+}
+
+.baner-content {
+  padding-bottom: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.baner-title {
+  font-size: 2em;
+  font-family: "Raleway";
+  font-weight: 400;
+  padding: 30px 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.baner-text {
+  font-size: 1em;
+  font-family: "Open Sans";
+  font-weight: 400;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.baner-btn {
+  font-size: 1em;
+  font-family: "Open Sans";
+  background: #08A6E4;
+  padding: 20px 50px;
+  border: 2px solid #08A6E4;
+  border-radius: 28px;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+}
+.baner-btn:hover {
+  color: #08A6E4;
+  background: white;
+  text-shadow: 0 0 10px #08A6E4;
+  transition: 0.2s;
+}
+
+@media (min-width: 580px) {
+  .baner-title {
+    font-size: 2.5em;
+  }
+
+  .baner-text {
+    font-size: 1.5em;
+  }
+
+  .baner-btn {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 945px) {
+  .baner-content {
+    padding-bottom: 20%;
+  }
+
+  .baner-title {
+    font-size: 3em;
+  }
+
+  .baner-btn {
+    padding: 20px 150px;
   }
 }
 /*# sourceMappingURL=main.css.map */

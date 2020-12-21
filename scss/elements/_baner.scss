@@ -1,0 +1,83 @@
+.baner{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("/assets/Background.png") no-repeat bottom/90% auto;
+}
+.baner-content{
+    padding-bottom: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.baner-title{
+    font-size: 2em;
+    font-family: $fontHeaders;
+    font-weight: 400;
+    padding: 30px 0;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.baner-text{
+    font-size: 1em;
+    font-family: $fontOther;
+    font-weight: 400;
+    text-align: center;
+    padding: 30px 0;
+
+}
+
+.baner-btn{
+    font-size: 1em;
+    font-family: $fontOther;
+    background: $colorPrimary;
+    padding: 20px 50px;
+    border: 2px solid $colorPrimary;
+    border-radius: 28px;
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    &:hover{
+        color: $colorPrimary;
+        background: white;
+        text-shadow: 0 0 10px $colorPrimary;
+        transition: 0.2s;
+    }
+}
+
+@media (min-width: 580px){
+    .baner-title{
+        font-size: 2.5em;
+    }
+    .baner-text{
+        font-size: 1.5em;
+    }
+    .baner-btn{
+        font-size: 1.5em;
+    }
+    
+}
+
+@media(min-width: 945px){
+    .baner-content{
+        padding-bottom: 20%;
+    }
+    .baner-title{
+        font-size: 3em;
+        // font-weight: bold;
+    }
+    .baner-text{
+        // font-size: 2em;
+    }
+    .baner-btn{
+        // font-size: 2em;
+        padding: 20px 150px;
+    }
+}
