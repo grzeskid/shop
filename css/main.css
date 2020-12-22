@@ -371,6 +371,10 @@ textarea {
 .container {
   width: 100%;
   max-width: 1352px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
@@ -565,7 +569,7 @@ main {
     position: absolute;
     background: white;
     height: 120px;
-    top: 70px;
+    top: 55px;
     align-items: flex-start;
     box-shadow: #00000029 0 3px 6px;
     width: 100%;
@@ -682,5 +686,64 @@ main {
   .baner-btn {
     padding: 20px 150px;
   }
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  height: 100vh;
+  text-align: center;
+  font-family: "Raleway";
+}
+
+.stats-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats-title {
+  font-size: 1.75em;
+  font-weight: 300;
+  max-width: 90%;
+  line-height: 1.25em;
+}
+
+.stats-number {
+  font-size: 1em;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.icon-bg {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.icon-color1 {
+  background: #FB3B64;
+}
+.icon-color2 {
+  background: #08A6E4;
+}
+.icon-color3 {
+  background: #55DFB4;
+}
+
+.stats-icon {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  left: 50%;
+}
+
+.stats-text {
+  padding: 20px 0;
+  font-size: 0.75em;
+  color: #A5A5A5;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,60 @@
+.stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    height: 100vh;
+    text-align: center;
+    font-family: $fontHeaders;
+}
+.stats-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stats-title{
+    font-size: 1.75em;
+    font-weight: 300;
+    max-width: 90%;
+    line-height: 1.25em;
+}
+
+.stats-number{
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.icon-bg{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.icon-color{
+    &1{
+        background: $colorReddishAkcent;
+    }
+    &2{
+        background: $colorPrimary;
+    }
+    &3{
+        background: $colorGreenAkcent;
+    }
+}
+
+.stats-icon{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    left: 50%;
+}
+
+.stats-text{
+    padding: 20px 0;
+    font-size: 0.75em;
+    color: $colorGrey;
+}
