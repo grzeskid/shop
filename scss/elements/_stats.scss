@@ -3,8 +3,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 100px;
+    margin-top: 10%;
     height: 100vh;
+    width: 100%;
     text-align: center;
     font-family: $fontHeaders;
 }
@@ -13,6 +14,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding-top: 50px;
 }
 
 .stats-title{
@@ -57,4 +59,53 @@
     padding: 20px 0;
     font-size: 0.75em;
     color: $colorGrey;
+}
+
+@media (min-width: 580px){
+    .stats{
+        &-icon{
+            height: 100px;
+            width: 100px;
+
+        }
+        &-title{
+            font-size: 2em;
+        }
+        &-text{
+            font-size: 1em;
+        }
+        &-number{
+            font-size: 1.25em;
+        }
+    }
+    .icon-bg{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media(min-width: 945px){
+    .stats{
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 80%;
+        &-title{
+            font-size: 2.75em;
+            padding: 0 45px;
+        }
+        &-text{
+            font-size: 1.5em;
+        }
+        &-number{
+            font-size: 1.75em;
+        }
+        // &-icon{
+        //     width: 150px;
+        //     height: 150px;
+        // }
+    }
+    // .icon-bg{
+    //     height: 150px;
+    //     width: 150px;
+    // }
 }
