@@ -792,6 +792,8 @@ main {
   width: 100%;
   min-height: 100vh;
   margin: 50px 0;
+  display: flex;
+  justify-content: center;
 }
 .benefits-title {
   padding: 25px;
@@ -886,7 +888,9 @@ main {
     width: 150px;
   }
   .benefits-icon3 {
-    transform: translate(-50%, 0);
+    top: 50%;
+    width: 200px;
+    height: 200px;
   }
 
   .img-bg1 {
@@ -911,6 +915,7 @@ main {
     background: white;
     margin-right: 25px;
     border-radius: 6px;
+    height: 100%;
   }
 
   .benefits-art2 {
@@ -920,5 +925,387 @@ main {
     flex-direction: row;
     background: #F7F7F7;
   }
+}
+.prices-title {
+  font-family: "Raleway";
+  font-size: 2em;
+  color: black;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.prices-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 10px;
+}
+
+.prices-plan {
+  font-size: 1em;
+  font-weight: bold;
+  font-family: "Raleway";
+  padding: 5px;
+}
+
+.prices-cost {
+  font-size: 1.25em;
+  font-family: "Open Sans";
+  padding: 5px;
+}
+
+.basic-cost {
+  color: #FB3B64;
+}
+
+.professional-cost {
+  color: #08A6E4;
+}
+
+.premium-cost {
+  color: #55DFB4;
+}
+
+.prices-content {
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
+}
+
+.prices-content:hover {
+  transform: scale(1.1);
+}
+
+.basic-content {
+  border: 1px solid #FB3B64;
+}
+
+.professional-content {
+  border: 1px solid #08A6E4;
+}
+
+.premium-content {
+  border: 1px solid #55DFB4;
+}
+
+.prices {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.prices-variant {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  margin: 0 20px 0 20px;
+}
+
+.prices-btn {
+  position: relative;
+  top: 50%;
+  left: -50%;
+  transform: translate(50%, 0%);
+  font-family: "Open Sans";
+  font-size: 0.7em;
+  padding: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prices-btn-1 {
+  background: #FB3B64;
+}
+.prices-btn-1:hover {
+  background: white;
+  border: 1px solid #FB3B64;
+}
+.prices-btn-2 {
+  background: #08A6E4;
+}
+.prices-btn-2:hover {
+  background: white;
+  border: 1px solid #08A6E4;
+}
+.prices-btn-3 {
+  background: #55DFB4;
+}
+.prices-btn-3:hover {
+  background: white;
+  border: 1px solid #55DFB4;
+}
+
+.prices-list {
+  font-size: 0.75em;
+  font-family: "Open Sans";
+  padding: 25px;
+}
+
+.prices-list li {
+  padding: 10px;
+}
+
+.basic-list li:nth-of-type(1):before,
+.basic-list li:nth-of-type(2):before,
+.basic-list li:nth-of-type(3):before {
+  content: url("/assets/Checkmark-1.svg");
+  margin-right: 3px;
+}
+
+.basic-list li:nth-of-type(4):before,
+.basic-list li:nth-of-type(5):before {
+  content: "x";
+  font-size: 9px;
+  padding: 0 1px;
+  color: #FB3B64;
+  margin-right: 3px;
+  border-radius: 1px;
+  border: 1px solid #FB3B64;
+}
+
+.professional-list li:nth-of-type(1):before,
+.professional-list li:nth-of-type(2):before,
+.professional-list li:nth-of-type(3):before,
+.professional-list li:nth-of-type(4):before {
+  content: url("/assets/Checkmark-1.svg");
+  margin-right: 3px;
+}
+
+.professional-list li:nth-of-type(5):before {
+  content: "x";
+  font-size: 9px;
+  padding: 0 1px;
+  color: #FB3B64;
+  margin-right: 3px;
+  border-radius: 1px;
+  border: 1px solid #FB3B64;
+}
+
+.premium-list li:nth-of-type(1):before,
+.premium-list li:nth-of-type(2):before,
+.premium-list li:nth-of-type(3):before,
+.premium-list li:nth-of-type(4):before,
+.premium-list li:nth-of-type(5):before {
+  content: url("/assets/Checkmark-1.svg");
+  margin-right: 3px;
+}
+
+@media (min-width: 945px) {
+  .prices-container {
+    flex-direction: row;
+  }
+
+  .prices-content {
+    width: 300px;
+    height: 400px;
+    flex-direction: column;
+  }
+
+  .prices-list {
+    font-size: 1em;
+  }
+
+  .prices-btn {
+    top: -1%;
+    left: -19%;
+  }
+
+  .prices-plan {
+    font-size: 1.5em;
+  }
+
+  .prices-cost {
+    font-size: 2em;
+  }
+}
+.main-section-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.form-title {
+  font-size: 49px;
+  font-family: "Raleway";
+}
+
+.form-text {
+  font-size: 16px;
+  font-family: "Open Sans";
+  padding: 40px 0;
+}
+
+.contact-data {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Open Sans";
+  font-size: 16px;
+  color: #A5A5A5;
+}
+
+.contact-data-text {
+  padding-right: 0.5em;
+}
+
+.contact-data-text:hover {
+  color: #08A6E4;
+  cursor: pointer;
+}
+
+.data-text1::before {
+  content: " ";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background: url("../assets/Mail Icon.svg") no-repeat center/cover;
+  margin-right: 20px;
+}
+
+.data-text2::before {
+  content: " ";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background: url("../assets/Phone Icon.svg") no-repeat center/cover;
+  margin-right: 20px;
+}
+
+.contact-form-content {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+label.form-text {
+  color: #08A6E4;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: "Open Sans";
+  padding: 10px;
+}
+
+.form-checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.contact-form-content input {
+  width: 100%;
+  border: none;
+  border-bottom: solid 2px #A5A5A5;
+}
+
+.form-checkbox input {
+  min-width: 10%;
+  margin-right: 10px;
+}
+
+.checkbox-text {
+  font-size: 0.7em;
+}
+
+.form-button {
+  padding: 20px 100px;
+  background: #08A6E4;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Open Sans";
+  border: solid 2px #08A6E4;
+  border-radius: 27px;
+  margin: 20px;
+}
+
+.form-button:hover {
+  background: white;
+  border: solid 2px #08A6E4;
+  color: #08A6E4;
+}
+
+@media (min-width: 750px) {
+  .contact-form {
+    flex-direction: row;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -5px 40px #00000029;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  margin: 0 20px 0 20px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-title {
+  color: #08A6E4;
+  font-size: 26px;
+  font-family: "Raleway";
+  margin-bottom: 20px;
+}
+
+.footer-copyright {
+  color: #A5A5A5;
+  font-size: 11px;
+  font-family: "Open Sans";
+}
+
+.footer-social a {
+  margin: 10px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,117 @@
+.main-section-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.contact-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-title-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.form-title{
+    font-size: 49px;
+    font-family: $fontHeaders;
+}
+.form-text{
+    font-size: 16px;
+    font-family: $fontOther;
+    padding: 40px 0;
+}
+.contact-data{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: $fontOther;
+    font-size: 16px;
+    color: $colorGrey;
+}
+.contact-data-text{
+    padding-right: 0.5em;
+}
+.contact-data-text:hover{
+    color: $colorPrimary;
+    cursor: pointer;
+}
+.data-text1::before{
+    content: " ";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: url("../assets/Mail\ Icon.svg") no-repeat center/cover;
+    margin-right: 20px;
+}
+.data-text2::before{
+    content: " ";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: url("../assets/Phone\ Icon.svg") no-repeat center/cover;
+    margin-right: 20px;
+}
+.contact-form-content{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+label.form-text{
+    color: $colorPrimary;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: $fontOther;
+    padding: 10px;
+}
+.form-checkbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+.contact-form-content input{
+    width: 100%;
+    border: none;
+    border-bottom: solid 2px $colorGrey;
+}
+.form-checkbox input{
+    min-width: 10%;
+    margin-right: 10px;
+}
+.checkbox-text{
+    font-size: 0.7em;
+}
+.form-button{
+    padding: 20px 100px;
+    background: $colorPrimary;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: $fontOther;
+    border: solid 2px $colorPrimary;
+    border-radius: 27px;
+    margin: 20px;
+}
+.form-button:hover{
+    background: white;
+    border: solid 2px $colorPrimary;
+    color: $colorPrimary;
+}
+
+@media(min-width: 750px){
+    .contact-form{
+        flex-direction: row;
+    }
+}
