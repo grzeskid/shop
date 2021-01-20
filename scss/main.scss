@@ -7,6 +7,7 @@
 // variables
 @import "../scss/variables/colors";
 @import "../scss/variables/fonts";
+@import "../scss/variables/mixins";
 
 // navigation menu
 @import "../scss/elements/navigation";
@@ -22,6 +23,9 @@
 
 // prizes
 @import "../scss/elements/prices";
+
+// calculator
+@import "../scss/elements/calculator";
 
 // contact
 @import "../scss/elements/contact";
