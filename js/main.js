@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded" ,function(){
+document.addEventListener("DOMContentLoaded", function () {
     // ilość produktów
     const products = document.getElementById("products");
     // zamówienia
@@ -21,94 +21,137 @@ document.addEventListener("DOMContentLoaded" ,function(){
     const terminalToCalc = document.querySelector(".list__item[data-id='terminal']");
     // suma
     const sum = document.getElementById("total-price");
+    // do sumowania
+    const price = document.querySelectorAll(".item__price");
+
+    // // buttony z sekcji prices
+    // const btnBasic = document.querySelector(".prices-btn-1");
+    // const btnProfessional = document.querySelector(".prices-btn-1");
+    // const btnPremium = document.querySelector(".prices-btn-3");
+
+    // //cały kalkulator
+    // const calc = document.querySelector(".calc");
+
+    // btnBasic.addEventListener("click", openCalc);
+
+    // function openCalc(event){
+    //     event.preventDefault();
+    //     calc.style.display = "block"
+    // }
 
     //otwieranie i zamykanie wariantów
     package.addEventListener("click", addClass);
-    packageList.forEach(function(el){
+    packageList.forEach(function (el) {
         el.addEventListener("click", selectPackage)
     })
-    
-    function addClass(event){
+
+    function addClass(event) {
         event.target.parentElement.classList.add("open");
     }
 
-    function selectPackage(event){
+    function selectPackage(event) {
         event.target.parentElement.parentElement.classList.remove("open");
         packageToCalc.classList.add("open");
-        if(event.target.dataset.value === "basic"){
+        if (event.target.dataset.value === "basic") {
             chosenOne.innerText = "Basic";
             packageToCalc.querySelector("span:nth-of-type(2)").innerText = "Basic";
             packageToCalc.querySelector("span:nth-of-type(3)").innerText = "0$";
+            summary();
         }
-        if(event.target.dataset.value === "professional"){
+        if (event.target.dataset.value === "professional") {
             chosenOne.innerText = "Professional";
             packageToCalc.querySelector("span:nth-of-type(2)").innerText = "Professional";
             packageToCalc.querySelector("span:nth-of-type(3)").innerText = "25$";
+            summary();
         }
-        if(event.target.dataset.value === "premium"){
+        if (event.target.dataset.value === "premium") {
             chosenOne.innerText = "Premium";
             packageToCalc.querySelector("span:nth-of-type(2)").innerText = "Premium";
             packageToCalc.querySelector("span:nth-of-type(3)").innerText = "60$";
+            summary();
         }
-        
-        
+
+
     }
 
     // accounting
     account.addEventListener("change", addAccounting)
 
-    function addAccounting(event){
-        if(event.target.checked === true){
+    function addAccounting(event) {
+        if (event.target.checked === true) {
             accountToCalc.classList.add("open");
-        }
-        else {
+            accountToCalc.querySelector("span:nth-of-type(2)").innerText = 10 + "$";
+            summary();
+        } else {
             accountToCalc.classList.remove("open");
+            sum.lastElementChild.innerText = parseFloat(price[0].innerText) + parseFloat(price[1].innerText) + parseFloat(price[2].innerText) + parseFloat(price[4].innerText) + "$";
+
         }
     }
 
     // terminal
     terminal.addEventListener("change", addTerminal)
 
-    function addTerminal(event){
-        if(event.target.checked === true){
+    function addTerminal(event) {
+        if (event.target.checked === true) {
             terminalToCalc.classList.add("open");
-        }
-        else {
+            terminalToCalc.querySelector("span:nth-of-type(2)").innerText = 10 + "$";
+            summary();
+        } else {
             terminalToCalc.classList.remove("open");
+            sum.lastElementChild.innerText = parseFloat(price[0].innerText) + parseFloat(price[1].innerText) + parseFloat(price[2].innerText) + parseFloat(price[3].innerText) + "$";
+
         }
     }
 
     // products
     products.addEventListener("change", addProducts);
 
-    function addProducts(event){
-        console.log(event.target)
-        if (event.target.value > 0){
-        productsToCalc.classList.add("open");
-        productsToCalc.querySelector("span:nth-of-type(2)").innerText = event.target.value + "*" + "$0.5";
-        productsToCalc.querySelector("span:nth-of-type(3)").innerText = "$" + event.target.value * 0.5
+    function addProducts(event) {
+        if (event.target.value < 0) {
+            alert("tylko dodatnie wartości");
+        }
+        if (event.target.value > 0) {
+            productsToCalc.classList.add("open");
+            productsToCalc.querySelector("span:nth-of-type(2)").innerText = event.target.value + "*" + "$0.5";
+            productsToCalc.querySelector("span:nth-of-type(3)").innerText = event.target.value * 0.5 + "$";
+            summary();
+        } else {
+            productsToCalc.classList.remove("open");
+            sum.lastElementChild.innerText = parseFloat(price[1].innerText) + parseFloat(price[2].innerText) + parseFloat(price[3].innerText) + parseFloat(price[4].innerText) + "$";
+
+
+        }
     }
-    else {
-        productsToCalc.classList.remove("open");
-    }
-}
 
     // orders
     orders.addEventListener("change", addOrder);
 
-    function addOrder(event){
-        if (event.target.value > 0){
+    function addOrder(event) {
+        if (event.target.value < 0) {
+            alert("tylko dodatnie wartości");
+        }
+        if (event.target.value > 0) {
             ordersToCalc.classList.add("open");
             ordersToCalc.querySelector("span:nth-of-type(2)").innerText = event.target.value + "*" + "$0.5";
-            ordersToCalc.querySelector("span:nth-of-type(3)").innerText = "$" + event.target.value * 0.5;
-        }
-        else {
+            ordersToCalc.querySelector("span:nth-of-type(3)").innerText = event.target.value * 0.5 + "$";
+            summary();
+        } else {
             ordersToCalc.classList.remove("open");
+            sum.lastElementChild.innerText = parseFloat(price[0].innerText) + parseFloat(price[2].innerText) + parseFloat(price[3].innerText) + parseFloat(price[4].innerText) + "$";
         }
     }
 
+
+
+
     // summary
 
-    console.log(products.value);
+    function summary() {
+        sum.classList.add("open");
+        sum.lastElementChild.innerText = parseFloat(price[0].innerText) + parseFloat(price[1].innerText) + parseFloat(price[2].innerText) + parseFloat(price[3].innerText) + parseFloat(price[4].innerText) + "$";
+    }
+
+
     //koniec document.
 })
