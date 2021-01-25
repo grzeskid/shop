@@ -25,19 +25,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const price = document.querySelectorAll(".item__price");
 
     // // buttony z sekcji prices
-    // const btnBasic = document.querySelector(".prices-btn-1");
-    // const btnProfessional = document.querySelector(".prices-btn-1");
-    // const btnPremium = document.querySelector(".prices-btn-3");
+    const btnBasic = document.querySelector(".prices-btn-1");
+    const btnProfessional = document.querySelector(".prices-btn-2");
+    const btnPremium = document.querySelector(".prices-btn-3");
 
-    // //cały kalkulator
-    // const calc = document.querySelector(".calc");
+    //cały kalkulator
+    const calc = document.querySelector(".calc");
 
-    // btnBasic.addEventListener("click", openCalc);
+    btnBasic.addEventListener("click", openCalc);
+    btnProfessional.addEventListener("click", openCalc);
+    btnPremium.addEventListener("click", openCalc);
 
-    // function openCalc(event){
-    //     event.preventDefault();
-    //     calc.style.display = "block"
-    // }
+    function openCalc(event) {
+        event.preventDefault();
+        calc.style.display = "block";
+        calc.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
 
     //otwieranie i zamykanie wariantów
     package.addEventListener("click", addClass);
@@ -85,7 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             accountToCalc.classList.remove("open");
             sum.lastElementChild.innerText = parseFloat(price[0].innerText) + parseFloat(price[1].innerText) + parseFloat(price[2].innerText) + parseFloat(price[4].innerText) + "$";
-
+            accountToCalc.querySelector("span:nth-of-type(2)").innerText = 0;
+            summaryEnd();
         }
     }
 
@@ -100,7 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             terminalToCalc.classList.remove("open");
             sum.lastElementChild.innerText = parseFloat(price[0].innerText) + parseFloat(price[1].innerText) + parseFloat(price[2].innerText) + parseFloat(price[3].innerText) + "$";
-
+            terminalToCalc.querySelector("span:nth-of-type(2)").innerText = 0;
+            summaryEnd();
         }
     }
 
@@ -119,7 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             productsToCalc.classList.remove("open");
             sum.lastElementChild.innerText = parseFloat(price[1].innerText) + parseFloat(price[2].innerText) + parseFloat(price[3].innerText) + parseFloat(price[4].innerText) + "$";
-
+            productsToCalc.querySelector("span:nth-of-type(3)").innerText = 0;
+            summaryEnd();
 
         }
     }
@@ -139,6 +148,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             ordersToCalc.classList.remove("open");
             sum.lastElementChild.innerText = parseFloat(price[0].innerText) + parseFloat(price[2].innerText) + parseFloat(price[3].innerText) + parseFloat(price[4].innerText) + "$";
+            ordersToCalc.querySelector("span:nth-of-type(3)").innerText = 0;
+            summaryEnd();
         }
     }
 
@@ -152,6 +163,23 @@ document.addEventListener("DOMContentLoaded", function () {
         sum.lastElementChild.innerText = parseFloat(price[0].innerText) + parseFloat(price[1].innerText) + parseFloat(price[2].innerText) + parseFloat(price[3].innerText) + parseFloat(price[4].innerText) + "$";
     }
 
+    function summaryEnd() {
+        if (!productsToCalc.classList.contains("open") && !ordersToCalc.classList.contains("open") && !packageToCalc.classList.contains("open") && !accountToCalc.classList.contains("open") && !terminalToCalc.classList.contains("open")) {
+            sum.classList.remove("open");
+        }
+    }
 
+    document.addEventListener("click", dropdownClose);
+
+    function dropdownClose(event) {
+        if (event.target === chosenOne) {
+            return
+        }
+        if (package.classList.contains("open") && event.target !== packageList) {
+            package.classList.remove("open");
+        }
+
+    }
+    console.log(package)
     //koniec document.
 })

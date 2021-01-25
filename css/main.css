@@ -1139,6 +1139,7 @@ main {
   padding: 80px 0;
   background-color: #F7F7F7;
   width: 100%;
+  display: none;
 }
 @media (max-width: 1024px) {
   .calc {
