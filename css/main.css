@@ -616,7 +616,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url("/assets/Background.png") no-repeat bottom/90% auto;
+  background: url("../assets/Background.png") no-repeat bottom/90% auto;
 }
 
 .baner-content {
